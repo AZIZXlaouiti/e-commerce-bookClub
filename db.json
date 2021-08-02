@@ -1,0 +1,34 @@
+{
+  "store":[
+    {
+    "id":1,
+    "name":"book1",
+    "src":"http://utopian-drink.surge.sh/images/1.jpg",
+     "Likes":50,
+     "price":27.99
+    },
+    {
+      "id":2,
+      "name":"book2",
+      "src":"http://utopian-drink.surge.sh/images/6.jpg",
+      "Likes":100,
+      "price":14.99
+    },
+    {
+      "id":3,
+      "name":"book3",
+      "src":"http://utopian-drink.surge.sh/images/5.jpg",
+      "Likes":100,
+      "price":16.99
+    }
+  
+    ],
+    "users":[
+      {
+        "id":1,
+        "userName":"john",
+        "wallet":200,
+        "cart":[]
+      }
+    ]
+}
