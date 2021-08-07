@@ -25,7 +25,7 @@ const NavBar = () => {
             
               <button className="menu-button menu-button--delete">
               {icons[2].svg}
-              <Link to ="/delete">Delete</Link></button></li>
+              <Link to ="/checkout">Checkout</Link></button></li>
             <li className="menu-item">
             
             <button className="menu-button menu-button--delete">
