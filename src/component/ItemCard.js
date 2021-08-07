@@ -20,7 +20,7 @@ export const ItemCard = ({book:{id,name,src,Likes,price,amount},handleContent}) 
                     <div className="item-description">
                        <i onClick={(e)=>setLikes({likes:Likes+=1,isAdd:false})}> {likes.isAdd?  icons[6].svg:icons[7].svg}</i> 
                        <p >{likes.likes}</p>
-                      
+                      <img src={icons[11].svg}/>
                         <footer>${price}</footer>
                     </div>
                     </div>
@@ -30,6 +30,9 @@ export const ItemCard = ({book:{id,name,src,Likes,price,amount},handleContent}) 
       
     )
 }
+
+
+
 
 const StoreCard =({cart})=> {
     return(

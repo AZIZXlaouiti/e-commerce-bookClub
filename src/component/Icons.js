@@ -2,14 +2,10 @@ import React from 'react'
 
 
     const icons=[{
-       svg:<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-corner-up-right">
-       <polyline points="15 14 20 9 15 4">
-       </polyline>
-       <path d="M4 20v-7a4 4 0 0 1 4-4h12">
-
-       </path>
-       </svg>,
-        id:"share"    
+       svg:<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-trending-up">
+       <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+       <polyline points="17 6 23 6 23 12"></polyline></svg>,
+        id:"store"    
     },
     {
       svg:<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-edit-2"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z">
@@ -18,19 +14,15 @@ import React from 'react'
         id:"create"  
     },
     {
-      svg: <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-trash-2">
-            <polyline points="3 6 5 6 21 6"></polyline>
-            <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
-            <line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line>
-      </svg>,
-        id:"delete"
+      svg: <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 12c0 6.627-5.373 12-12 12s-12-5.373-12-12h2c0 5.514 4.486 10 10 10s10-4.486 10-10-4.486-10-10-10c-2.777 0-5.287 1.141-7.099 2.977l2.061 2.061-6.962 1.354 1.305-7.013 2.179 2.18c2.172-2.196 5.182-3.559 8.516-3.559 6.627 0 12 5.373 12 12zm-13-6v8h7v-2h-5v-6h-2z"/></svg>,
+        id:"checkout"
     },
     {
         svg:<svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
         <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"></path>
         <path d="M9 22V12h6v10"></path>
       </svg>,
-        id:"home"    
+        id:"store"    
       
     },
     {
@@ -61,7 +53,32 @@ import React from 'react'
     {
       svg:<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6 13h-5v5h-2v-5h-5v-2h5v-5h2v5h5v2z"/></svg>,
       id:"remove"
+    },
+    {
+      svg:"https://assets.codepen.io/3685267/res-react-dash-country-up.svg",
+      id:'up'
+    },
+    {
+      svg:"https://assets.codepen.io/3685267/res-react-dash-country-down.svg",
+      id:'down'
+    },
+    {
+      svg:"https://assets.codepen.io/3685267/res-react-dash-bull.svg",
+      id:'stock'
+    },
+    {
+      svg:"http://utopian-drink.surge.sh/images/icon/reviews.svg",
+      id:'review'
+    },
+    {
+      svg:<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M19.406 9.558c-1.21-.051-2.87-.278-3.977-.744.809-3.283 1.253-8.814-2.196-8.814-1.861 0-2.35 1.668-2.833 3.329-.373 1.283-.794 2.341-1.254 3.22-.038-.643-.475-1.611-.928-2.08l-.796.625c.39.328.835 1.352.816 1.906-.561.138-1.404-.067-1.91-.344l-.256.967c.557.266 1.557.491 2.164.377-1.842 2.44-4.1 2.794-6.236 3.072v9.928c3.503 0 5.584.729 8.169 1.842 1.257.541 3.053 1.158 5.336 1.158 2.538 0 4.295-.997 5.009-3.686.5-1.877 1.486-7.25 1.486-8.25 0-1.648-1.168-2.446-2.594-2.506zm-6.07-.597l-2.601-1.05c.198-.37.389-.772.575-1.201l2.359.778c-.1.5-.213.989-.333 1.473zm.505-2.518l-2.138-.705c.148-.396.292-.816.432-1.259l1.833.548c-.021.487-.062.961-.127 1.416zm.144-2.527l-1.529-.457c.773-2.332 1.429-1.537 1.529.457zm3.911 10.501s.201.01 1.069-.027c1.082-.046 1.051 1.469.004 1.563l-1.761.099c-.734.094-.656 1.203.141 1.172 0 0 .686-.017 1.143-.041 1.068-.056 1.016 1.429.04 1.551-.424.053-1.745.115-1.745.115-.811.072-.706 1.235.109 1.141l.771-.031c.822-.074 1.003.825-.292 1.661-1.567.881-4.685.131-6.416-.614-2.239-.965-4.438-1.934-6.959-2.006v-6c2.257-.518 4.419-1.401 6.197-4.164 1.365.705 5.609 2.524 9.002 2.714 1.055.059 1.024 1.455-.051 1.584l-1.394.167s-.608 1.111.142 1.116z"/></svg>,
+      id:'like'
+    },
+    {
+      svg:"http://utopian-drink.surge.sh/images/icon/star.svg",
+      id:'rate'
     }
+   
      
     ]
     
