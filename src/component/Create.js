@@ -1,6 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 import icons from './Icons'
 const Home = () => {
+     const [user,setUser] = useState([])
+
     return (
         
             <div className="menu menu-field welcome-page">
@@ -17,7 +19,8 @@ const Home = () => {
                 
             <button className="menu-button menu-button-filed">
             {icons[4].svg}
-            <input placeholder="username"  type="text"/>
+            <input placeholder="username"  type="text" />
+
             </button>
                </li>
                <li className="menu-item">
@@ -27,7 +30,7 @@ const Home = () => {
             <input placeholder="Password"  type="text"/>
             </button>
                </li>
-             
+               <button className='add-8' >continue</button> 
               </ul>
               
             </div>

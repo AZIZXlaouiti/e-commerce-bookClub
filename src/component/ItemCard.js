@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React,{useState,useEffect} from 'react'
 import icons from "./Icons"
 
 export const ItemCard = ({book:{id,name,src,Likes,price,amount},handleContent}) => {
@@ -34,7 +34,8 @@ export const ItemCard = ({book:{id,name,src,Likes,price,amount},handleContent}) 
 
 
 
-const StoreCard =({cart})=> {
+const StoreCard =({cart,icons='',handleUpdateCart})=> {
+   
     return(
 
 <>
@@ -51,7 +52,7 @@ const StoreCard =({cart})=> {
                     </div>
                 </div>
                 <p className='price'>${cart.total}</p>
-                 {icons[8].svg}
+                 {icons?<i onClick={()=>handleUpdateCart(cart)}>{icons}</i>:null}
             </li>
             
         </ul>
