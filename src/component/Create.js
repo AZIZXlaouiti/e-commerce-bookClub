@@ -1,8 +1,11 @@
 import React, { useState } from 'react'
 import icons from './Icons'
-const Home = () => {
-     const [user,setUser] = useState([])
-
+const Home = ({history}) => {
+     
+     console.log('history',history)
+     function handleClick(){
+        history.push('/mystore')
+     }
     return (
         
             <div className="menu menu-field welcome-page">
@@ -14,25 +17,27 @@ const Home = () => {
            <footer>where you can sell/buy review books</footer>
               <footer>and make profit </footer>
               </ul>
-              <ul className="menu-list">
-            <li className="menu-item">
+              
+              <ul >
+           
                 
             <button className="menu-button menu-button-filed">
             {icons[4].svg}
-            <input placeholder="username"  type="text" />
+            <input placeholder="username"  type="text" required/>
 
             </button>
-               </li>
-               <li className="menu-item">
+             
+               
                 
             <button className="menu-button menu-button-filed">
             {icons[5].svg}
-            <input placeholder="Password"  type="text"/>
+            <input placeholder="Password"  type="text" required/>
             </button>
-               </li>
-                <button className='add-8'  >checkout</button> 
+             
+                <button onClick={handleClick} type='submit' className='add-8'  >continue</button> 
               </ul>
-              <ul class="menu-list"><li class="menu-item"><p>or login as guest
+             
+              <ul className="menu-list"><li class="menu-item"><p onClick={handleClick}>or login as guest
     </p></li></ul>
             </div>
         

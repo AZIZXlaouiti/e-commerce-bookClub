@@ -29,9 +29,7 @@ const App = () => {
       
       )
   },[])
-  // function handleUpadteCart(){
-  //   const updateWallet = Math.floor(username.wallet-book.price)
-  // }
+ 
   return (
     <div className="container">
       <Router>
@@ -39,7 +37,7 @@ const App = () => {
         <Switch>
         <Route exact path="/checkout" render={props=> <Checkout {...props} setCart = {setCart} cart={cart} username={username} />}/>
         <Route exact path="/mystore" ><Mystore username = {username} cart={cart}/> </Route>
-        <Route exact path="/create" ><Create username={username} setUser={setUser}/> </Route>
+        <Route exact path="/create" render={props=> <Create {...props} username={username} setUser={setUser}/>}/>
         <Route exact path="/store" ><Store body = {body} setbody ={setbody} cart={cart} setCart={setCart} username={username} setUser={setUser}/> </Route>
         </Switch>
       </Router>

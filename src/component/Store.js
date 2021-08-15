@@ -134,6 +134,13 @@ const Store = ({cart,setCart,username,setUser ,body,setbody}) => {
                  <div className='text-green'>${found.price}</div>
                  <p>{found.amount!== 0 ?`${found.amount} left`:<b style={{color:"red"}}>out of stock</b>}</p>
                   <button className='add-8'  onClick={()=>handleWallet(found)}>add</button> 
+                    <ul >
+                        <li className='blog' > { icons[4].svg}
+                    <span className="user">john </span>
+                   <span className="time">{new Date().toUTCString()}</span> </li>
+                   
+                    <li className='blog'><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitati</p></li> 
+                    </ul>
                   </div>
                  
               </section>:null}

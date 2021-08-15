@@ -1,70 +1,81 @@
 {
-  "store":[
+  "store": [
     {
-    "id":1,
-    "name":"book1",
-    "src":"http://utopian-drink.surge.sh/images/1.jpg",
-     "Likes":50,
-     "price":19.00,
-      "amount":4
+      "id": 1,
+      "name": "book1",
+      "src": "http://utopian-drink.surge.sh/images/1.jpg",
+      "Likes": 50,
+      "price": 19,
+      "amount": 4
     },
     {
-      "id":2,
-      "name":"book2",
-      "src":"http://utopian-drink.surge.sh/images/2.jpg",
-       "Likes":50,
-       "price":27.00,
-        "amount":6
-      },
-    {
-      "id":3,
-      "name":"book3",
-      "src":"http://utopian-drink.surge.sh/images/3.jpg",
-      "Likes":100,
-      "price":14.00,
-      "amount":7
+      "id": 2,
+      "name": "book2",
+      "src": "http://utopian-drink.surge.sh/images/2.jpg",
+      "Likes": 50,
+      "price": 27,
+      "amount": 6
     },
     {
-      "id":4,
-      "name":"book4",
-      "src":"http://utopian-drink.surge.sh/images/4.jpg",
-      "Likes":100,
-      "price":8.00,
-      "amount":5
+      "id": 3,
+      "name": "book3",
+      "src": "http://utopian-drink.surge.sh/images/3.jpg",
+      "Likes": 100,
+      "price": 14,
+      "amount": 7
     },
     {
-      "id":5,
-      "name":"book5",
-      "src":"http://utopian-drink.surge.sh/images/5.jpg",
-       "Likes":50,
-       "price":21.00,
-        "amount":6
-      },
-      {
-        "id":6,
-        "name":"book6",
-        "src":"http://utopian-drink.surge.sh/images/6.jpg",
-         "Likes":50,
-         "price":13.00,
-          "amount":4
+      "id": 4,
+      "name": "book4",
+      "src": "http://utopian-drink.surge.sh/images/4.jpg",
+      "Likes": 100,
+      "price": 8,
+      "amount": 5
+    },
+    {
+      "id": 5,
+      "name": "book5",
+      "src": "http://utopian-drink.surge.sh/images/5.jpg",
+      "Likes": 50,
+      "price": 21,
+      "amount": 6
+    },
+    {
+      "id": 6,
+      "name": "book6",
+      "src": "http://utopian-drink.surge.sh/images/6.jpg",
+      "Likes": 50,
+      "price": 13,
+      "amount": 4
+    },
+    {
+      "id": 7,
+      "name": "book7",
+      "src": "http://utopian-drink.surge.sh/images/7.jpg",
+      "Likes": 50,
+      "price": 4,
+      "amount": 3
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "userName": "john",
+      "wallet": 200,
+      "cart": [
+        {
+          "name": "book4",
+          "count": 1,
+          "total": 8,
+          "src": "http://utopian-drink.surge.sh/images/4.jpg"
         },
         {
-          "id":7,
-          "name":"book7",
-          "src":"http://utopian-drink.surge.sh/images/7.jpg",
-           "Likes":50,
-           "price":4.00,
-            "amount":3
-          }
-      
-  
-    ],
-    "users":[
-      {
-        "id":1,
-        "userName":"john",
-        "wallet":200,
-        "cart":[]
-      }
-    ]
+          "name": "book5",
+          "count": 1,
+          "total": 21,
+          "src": "http://utopian-drink.surge.sh/images/5.jpg"
+        }
+      ]
+    }
+  ]
 }

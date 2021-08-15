@@ -1,9 +1,14 @@
-import React, { useEffect } from 'react'
+import React, { useState,useEffect } from 'react'
 import StoreCard from './ItemCard'
-const Mystore = ({username,cart}) => {
-    console.log('uss',username.cart)
-    console.log('thcart', cart)
-    
+const Mystore = ({username}) => {
+    const[cart,setUserCart] = useState([])
+    useEffect(()=>{
+        fetch(`http://localhost:3001/users/1`)
+        .then(resp=>resp.json())
+        .then(data=>setUserCart(data.cart))
+        console.log('jkjk')
+
+    },[cart.length])
     return (
         <div className=" home menu menu-field">
             <section>
