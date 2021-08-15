@@ -24,10 +24,12 @@ const Store = ({cart,setCart,username,setUser ,body,setbody}) => {
     
    
     function handleWallet(book){
-        if (username.wallet>=book.price){
+        const available = body.find ((item)=>item.name=== book.name)
+        if (username.wallet>=book.price&& available.amount>0){
             
             const updateWallet = Math.floor(username.wallet-book.price)
             const updateItem =  cart.find((item)=>item.name===book.name)
+          
             if (!updateItem){
                     setCart([...cart,{name:book.name,count:1,total:book.price,src:book.src}])
                
@@ -41,19 +43,31 @@ const Store = ({cart,setCart,username,setUser ,body,setbody}) => {
                 setCart(priceChange)
             }
             
-            
+            const updateAmount = body.map((item)=>{
+                if (item.name === book.name) return {...item,amount:item.amount-=1}
+                else return {...item}
+            })
             setUser( {...username,wallet :updateWallet})
+            setbody(updateAmount)
+        }
+        else if (available.amount<=0){
+             
+            alert('out of stock')
         }
         else{
-            
-             alert('u need more money')
+            alert('you need more money')
         }
         
       
     }
     function handleUpdateCart(item){
-        console.log(item)
-        if (item.total !== 0 ){
+        const updateAmount = body.map((book)=>{
+            if (book.name === item.name) return {...book,amount:book.amount+=1}
+            else return {...book}
+        })
+       
+        setbody(updateAmount)
+        if (item.total > 0 ){
 
             if (username.wallet + item.total<=200 ){
                  const range = item.total/item.count
@@ -66,9 +80,10 @@ const Store = ({cart,setCart,username,setUser ,body,setbody}) => {
                     }
                 })
                 setCart(cartChange)
+                
             }
 
-        }else{
+        }if (item.total === 0){
             const removeCartBook = cart.filter((book)=>book !== item)
             setCart(removeCartBook)
         }
@@ -117,6 +132,7 @@ const Store = ({cart,setCart,username,setUser ,body,setbody}) => {
                   <div>
                  <img className='wh-8' src={icons[12].svg}/>
                  <div className='text-green'>${found.price}</div>
+                 <p>{found.amount!== 0 ?`${found.amount} left`:<b style={{color:"red"}}>out of stock</b>}</p>
                   <button className='add-8'  onClick={()=>handleWallet(found)}>add</button> 
                   </div>
                  

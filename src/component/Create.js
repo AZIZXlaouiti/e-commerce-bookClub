@@ -30,9 +30,10 @@ const Home = () => {
             <input placeholder="Password"  type="text"/>
             </button>
                </li>
-               <button className='add-8' >continue</button> 
+                <button className='add-8'  >checkout</button> 
               </ul>
-              
+              <ul class="menu-list"><li class="menu-item"><p>or login as guest
+    </p></li></ul>
             </div>
         
     )
