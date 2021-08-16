@@ -2,7 +2,7 @@ import React ,{useState, useEffect}from 'react'
 import StoreCard,{ItemCard} from './ItemCard'
 import icons from './Icons'
 
-const Store = ({cart,setCart,username,setUser ,body,setbody}) => {
+const Store = ({cart,setCart,currentUser,setUser ,body,setbody}) => {
     
    
    
@@ -25,9 +25,9 @@ const Store = ({cart,setCart,username,setUser ,body,setbody}) => {
    
     function handleWallet(book){
         const available = body.find ((item)=>item.name=== book.name)
-        if (username.wallet>=book.price&& available.amount>0){
+        if (currentUser.wallet>=book.price&& available.amount>0){
             
-            const updateWallet = Math.floor(username.wallet-book.price)
+            const updateWallet = Math.floor(currentUser.wallet-book.price)
             const updateItem =  cart.find((item)=>item.name===book.name)
           
             if (!updateItem){
@@ -47,7 +47,7 @@ const Store = ({cart,setCart,username,setUser ,body,setbody}) => {
                 if (item.name === book.name) return {...item,amount:item.amount-=1}
                 else return {...item}
             })
-            setUser( {...username,wallet :updateWallet})
+            setUser( {...currentUser,wallet :updateWallet})
             setbody(updateAmount)
         }
         else if (available.amount<=0){
@@ -69,12 +69,12 @@ const Store = ({cart,setCart,username,setUser ,body,setbody}) => {
         setbody(updateAmount)
         if (item.total > 0 ){
 
-            if (username.wallet + item.total<=200 ){
+            if (currentUser.wallet + item.total<=200 ){
                  const range = item.total/item.count
-                const priceChange = Math.floor(username.wallet+range)
-                setUser( {...username,wallet :priceChange})
+                const priceChange = Math.floor(currentUser.wallet+range)
+                setUser( {...currentUser,wallet :priceChange})
                 const cartChange = cart.map((book)=>{
-                    if(book == item) return {...book,count:book.count-=1,total:book.total-= range}
+                    if(book === item) return {...book,count:book.count-=1,total:book.total-= range}
                     else{
                         return{...book}
                     }
@@ -93,9 +93,9 @@ const Store = ({cart,setCart,username,setUser ,body,setbody}) => {
 
 
 
-    console.log('username',username)
+    // console.log('username',currentUser)
     console.log("cart",cart)
-    console.log("body",body)
+    // console.log("body",body)
     return (
       
             <div className=" home menu menu-field">
@@ -159,7 +159,7 @@ const Store = ({cart,setCart,username,setUser ,body,setbody}) => {
                 
         <section>
                   <div className='title'>Today</div>
-                  <button className="user-action">wallet : ${username.wallet}</button>
+                  <button className="user-action">wallet : ${currentUser.wallet}</button>
                  {cart.map((item,index)=> <> <StoreCard handleUpdateCart={handleUpdateCart} key={index} icons ={icons[8].svg}cart={item}/></>)} 
                  
 

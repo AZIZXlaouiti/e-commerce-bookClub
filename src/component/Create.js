@@ -1,10 +1,25 @@
 import React, { useState } from 'react'
 import icons from './Icons'
-const Home = ({history}) => {
-     
-     console.log('history',history)
-     function handleClick(){
-        history.push('/mystore')
+const Home = ({history,handleAddUser}) => {
+     const [newUser,setUser] = useState({
+      userName: "",
+      passWord: ''
+   
+     })
+
+   function handleClick(e){
+      e.preventDefault()
+      
+      handleAddUser(newUser)
+      history.push('/mystore')
+   }
+
+     function handleChange(e){
+          setUser({
+             ...newUser,
+             [e.target.name]:e.target.value
+          })
+         
      }
     return (
         
@@ -20,25 +35,26 @@ const Home = ({history}) => {
               
               <ul >
            
+              <form onSubmit={(e)=>handleClick(e)}>
+                 
                 
-            <button className="menu-button menu-button-filed">
+            
             {icons[4].svg}
-            <input placeholder="username"  type="text" required/>
+            <input value = {newUser.userName} className="menu-i menu-i-filed" placeholder="username"  type="text" name ='userName' onChange={(e)=>handleChange(e)} required/>
 
-            </button>
-             
-               
-                
-            <button className="menu-button menu-button-filed">
+            
             {icons[5].svg}
-            <input placeholder="Password"  type="text" required/>
-            </button>
+            <input value ={newUser.passWord} className="menu-i menu-i-filed" placeholder="password"  type="text"  name='passWord'  onChange={(e)=>handleChange(e)} required/>
+           
              
-                <button onClick={handleClick} type='submit' className='add-8'  >continue</button> 
+                <button  type='submit' className='add-8'  >continue</button> 
+                </form>  
               </ul>
              
-              <ul className="menu-list"><li class="menu-item"><p onClick={handleClick}>or login as guest
-    </p></li></ul>
+              <ul className="menu-list"><li class="menu-item">
+                 <p onClick={()=>history.push('/mystore')}>or login as guest
+               </p>
+               </li></ul>
             </div>
         
     )

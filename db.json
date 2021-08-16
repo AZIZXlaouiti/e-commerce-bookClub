@@ -61,9 +61,10 @@
     {
       "id": 1,
       "userName": "john",
+      "passWord": 12345,
       "wallet": 200,
       "cart": [
-        
+      
       ]
     }
   ]

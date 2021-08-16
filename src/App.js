@@ -8,7 +8,7 @@ import Mystore from './component/Mystore'
 import Checkout from './component/Checkout'
 const App = () => {
   const [cart , setCart ] = useState([])
-  const [username,setUser] = useState('john')
+  const [currentUser,setUser] = useState({userName:'john',wallet: 200})
   const [body,setbody] = useState([])
   useEffect(()=>{
     fetch('http://localhost:3001/store')
@@ -22,23 +22,40 @@ const App = () => {
    fetch('http://localhost:3001/users')
    .then(resp=>resp.json())
    .then(users=>{
-       const updateUser = users.find((user)=>user.userName === username)
+       const updateUser = users.find((user)=>user.userName === currentUser.userName)
        setUser(updateUser)
        
    }
       
       )
-  },[])
- 
+  },[currentUser.userName])
+
+   function handleAddUser(newUser){
+    const option={
+        method: 'POST', 
+        headers: {
+         'Content-type': 'application/json'
+        },
+        body: JSON.stringify({
+          ...newUser,
+          wallet: 200,
+          cart: []
+        })
+       }
+       
+    fetch(`http://localhost:3001/users/`,option)
+   }
+
+  console.log('currentUser',currentUser)
   return (
     <div className="container">
       <Router>
        <NavBar/>
         <Switch>
-        <Route exact path="/checkout" render={props=> <Checkout {...props} setCart = {setCart} cart={cart} username={username} />}/>
-        <Route exact path="/mystore" ><Mystore username = {username} cart={cart}/> </Route>
-        <Route exact path="/create" render={props=> <Create {...props} username={username} setUser={setUser}/>}/>
-        <Route exact path="/store" ><Store body = {body} setbody ={setbody} cart={cart} setCart={setCart} username={username} setUser={setUser}/> </Route>
+        <Route exact path="/checkout" render={props=> <Checkout {...props} setCart = {setCart} cart={cart} currentUser={currentUser} />}/>
+        <Route exact path="/mystore" ><Mystore currentUser = {currentUser} cart={cart}/> </Route>
+        <Route exact path="/create" render={props=> <Create {...props} currentUser={currentUser} setUser={setUser} handleAddUser={handleAddUser}/>}/>
+        <Route exact path="/store" ><Store body = {body} setbody ={setbody} cart={cart} setCart={setCart} currentUser={currentUser} setUser={setUser}/> </Route>
         </Switch>
       </Router>
     </div>

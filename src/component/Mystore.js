@@ -1,6 +1,6 @@
 import React, { useState,useEffect } from 'react'
 import StoreCard from './ItemCard'
-const Mystore = ({username}) => {
+const Mystore = ({currentUser}) => {
     const[cart,setUserCart] = useState([])
     useEffect(()=>{
         fetch(`http://localhost:3001/users/1`)
@@ -12,8 +12,8 @@ const Mystore = ({username}) => {
     return (
         <div className=" home menu menu-field">
             <section>
-                 <div className='title'><b>{username.userName}</b> history</div>
-                 {username.cart !== undefined? cart.map((item,index)=> <> <StoreCard key={index} cart={item}/></>):null}
+                 <div className='title'><b>{currentUser.userName}</b> history</div>
+                 {currentUser.cart !== undefined? cart.map((item,index)=> <> <StoreCard key={index} cart={item}/></>):null}
                 
                 
             </section>
