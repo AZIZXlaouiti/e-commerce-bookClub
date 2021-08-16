@@ -10,7 +10,7 @@ const Checkout = ({setCart , cart ,username, history,handleUpdateCart}) => {
             headers: {
              'Content-type': 'application/json'
             },
-            body: JSON.stringify({cart:cart})
+            body: JSON.stringify({cart:cart,wallet:username.wallet})
            }
            
         fetch(`http://localhost:3001/users/1`,option)

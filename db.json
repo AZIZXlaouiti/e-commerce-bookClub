@@ -63,18 +63,7 @@
       "userName": "john",
       "wallet": 200,
       "cart": [
-        {
-          "name": "book4",
-          "count": 1,
-          "total": 8,
-          "src": "http://utopian-drink.surge.sh/images/4.jpg"
-        },
-        {
-          "name": "book5",
-          "count": 1,
-          "total": 21,
-          "src": "http://utopian-drink.surge.sh/images/5.jpg"
-        }
+        
       ]
     }
   ]

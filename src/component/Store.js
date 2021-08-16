@@ -136,13 +136,25 @@ const Store = ({cart,setCart,username,setUser ,body,setbody}) => {
                   <button className='add-8'  onClick={()=>handleWallet(found)}>add</button> 
                     <ul >
                         <li className='blog' > { icons[4].svg}
-                    <span className="user">john </span>
-                   <span className="time">{new Date().toUTCString()}</span> </li>
+                          <span className="user">john </span>
+                            <span className="time">{new Date().toUTCString()}</span> </li>
                    
-                    <li className='blog'><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitati</p></li> 
+                          <li className='blog'><p>Lorem ipsum dolor sit amet,
+                               consectetur adipiscing elit,
+                                sed do eiusmod tempor 
+                                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitati</p></li> 
                     </ul>
-                  </div>
+                      
+                   
                  
+                  <button className="menu-button menu-button-filed">
+                      {icons[4].svg}
+                     <textarea placeholder='add comment'> 
+                    
+                      </textarea>
+                         </button>
+                    {icons[16].svg}
+                    </div>
               </section>:null}
                 
         <section>

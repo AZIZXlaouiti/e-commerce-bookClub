@@ -6,7 +6,7 @@ const Mystore = ({username}) => {
         fetch(`http://localhost:3001/users/1`)
         .then(resp=>resp.json())
         .then(data=>setUserCart(data.cart))
-        console.log('jkjk')
+       
 
     },[cart.length])
     return (
