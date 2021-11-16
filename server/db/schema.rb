@@ -10,27 +10,38 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_16_031541) do
+ActiveRecord::Schema.define(version: 2021_11_16_043254) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "names", force: :cascade do |t|
-    t.string "src"
-    t.integer "likes"
-    t.integer "price"
-    t.integer "amount"
-    t.bigint "store_id", null: false
+  create_table "customers", force: :cascade do |t|
+    t.string "username"
+    t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["store_id"], name: "index_names_on_store_id"
   end
 
-  create_table "stores", force: :cascade do |t|
+  create_table "inventories", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "products", force: :cascade do |t|
+    t.string "image"
     t.string "name"
+    t.string "description"
+    t.integer "price"
+    t.integer "quantity"
+    t.float "rating"
+    t.bigint "customer_id", null: false
+    t.bigint "inventory_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["customer_id"], name: "index_products_on_customer_id"
+    t.index ["inventory_id"], name: "index_products_on_inventory_id"
   end
 
-  add_foreign_key "names", "stores"
+  add_foreign_key "products", "customers"
+  add_foreign_key "products", "inventories"
 end
